@@ -5,9 +5,9 @@
   
   <link href="/xin-zhai.github.io/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://xin-zhai.github.io/"/>
   <updated>2019-12-30T10:43:13.856Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://xin-zhai.github.io/</id>
   
   <author>
     <name>zhai xin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/12/30/hello-world/"/>
-    <id>http://yoursite.com/2019/12/30/hello-world/</id>
+    <link href="https://xin-zhai.github.io/2019/12/30/hello-world/"/>
+    <id>https://xin-zhai.github.io/2019/12/30/hello-world/</id>
     <published>2019-12-30T10:43:13.855Z</published>
     <updated>2019-12-30T10:43:13.856Z</updated>
     
