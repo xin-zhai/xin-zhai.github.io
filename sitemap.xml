@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xin-zhai.github.io/2019/12/24/Mac%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
+    <loc>https://xin-zhai.github.io/tags/index.html</loc>
     
-    <lastmod>2020-01-04T16:35:19.002Z</lastmod>
+    <lastmod>2020-01-04T16:54:24.613Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xin-zhai.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-01-04T16:52:45.469Z</lastmod>
     
   </url>
   
