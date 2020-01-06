@@ -6,7 +6,7 @@
   <link href="/xin-zhai.github.io/atom.xml" rel="self"/>
   
   <link href="https://xin-zhai.github.io/"/>
-  <updated>2020-01-06T15:04:12.199Z</updated>
+  <updated>2020-01-06T15:23:04.262Z</updated>
   <id>https://xin-zhai.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一周Tips for 02</title>
+    <link href="https://xin-zhai.github.io/2020/01/06/%E4%B8%80%E5%91%A8Tips-for-02/"/>
+    <id>https://xin-zhai.github.io/2020/01/06/%E4%B8%80%E5%91%A8Tips-for-02/</id>
+    <published>2020-01-06T15:16:19.000Z</published>
+    <updated>2020-01-06T15:23:04.262Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-操作命令"><a href="#1-操作命令" class="headerlink" title="1.操作命令"></a>1.操作命令</h3><p><strong>a.复制文件</strong><br>cp <em>.txt filename<br>b.复制目录<br>cp -r filename1 filename2<br>*</em>b.git命令**<br>1.git提交到远程仓库<br>进入本地的git目录，在其中创建文件或文件夹(修改也是)，然后</p><pre><code>1.git add ./git add filename  文件添加到缓存2.git commit filename -m &quot;描述&quot;  将缓存区内容添加到仓库中3.git push 添加到远程仓库     or git commit filename -am &quot;描述&quot;</code></pre><p>2.创建分支</p><pre><code>git branch namegit merge 合并分支git branch -b name 创建分支并切换到该分支下git branch -d name 删除分支git checkout name  切换分支</code></pre><p>关于分支操作，你切换到那个分支，然后对其操作，就会在哪个分支上产生改变，你可以创建一个分支然后对其操作，然后将这个分支合并到主分支上就可以了</p><p>在你创建的分支上你可以在当前分支提交，提交步骤和上面一样(提交之后只能在当前分支可见，主分支不可见)，当你切换到主分支要和他合并时，执行git merge 分支，在这之后直接git push就可以再远程仓库上看到了。</p><p>3.查看当前远程仓库</p><pre><code>git remote 粗略git remote -v 详细</code></pre><p>4.提取远程仓库</p><pre><code>git fetch name(仓库名) branchname(分支名)</code></pre><p>5.删除远程仓库</p><pre><code>git remote rm name</code></pre><p>6.查看提交历史</p><pre><code>git loggit log --oneliine：查看简介的日志记录git log --graph:以拓扑图的方式查看提交的记录git log --reverse：逆序的方式显示日志记录git log --author: 查找指定用户的执行操作记录git log --before        --since        --util        --after        以时间段的方式查看日至提交的记录</code></pre><h3 id="2-概念"><a href="#2-概念" class="headerlink" title="2.概念"></a>2.概念</h3><p>1.<strong>什么是面向对象，面向对象的特征，对象间的关系</strong><br>面向对象我的理解就是，将对象抽象为可视化的数据结构，该数据结构可以表示对象的特征以及属性，一类具有相似特征的对象，可以抽象出一个公共的数据结构，特殊的部分再细化就可以了。具体到操作也只是对抽象出来的对象进行操作，比面向过程的编程高了一个维度，是对象间的互动。</p><p>面向对象有三个特征：继承、封装、多态</p><ul><li>继承：A  extends B 子类继承父类所有的属性和方法，其中构造函数不可以继承，但是可以显示或隐式的调用，类的私有属性(包括final类型的私有属性)，可以继承，但是不能使用，子类拥有父类的私有成员变量，但是不能使用。</li><li>封装：所谓封装就是把对象的属性和操作封起来成为一个独立的整体，从而尽量的隐藏实现的具体细节，保证安全性，对外的话通过接口来进行操作。Java中主要通过private\protected\public三个关键字来进行封装，适当的封装可以提高代码的可读性以及可维护性，同时也可以降低耦合。</li><li>多态：同一个行为拥有不同的表现形式或形态就是多态，在Java中，程序中的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时是不确定的，是在运行时确定的。而对于同一个名称的方法，由于其实现不同和运行时调用的不同，所实现的功能就是不同的。</li></ul><p>对象间的关系：</p><ul><li>use-a：依赖关系</li><li>has-a：组合关系</li><li>is-a：继承关系</li></ul><p>2.<strong>准确阐述SOLID原则以及背后的含义</strong><br>SOLID是面向对象设计中的几个重要原则：</p><ul><li><p>SRP(The Single Responsibility Principle)：单一职责原则<br>一个对象只应该包含单一的职责，并且该职责被完整的封装在一个类中<br>由于一个类承担的职责越多，他被复用的可能性就越小，同时职责越多，耦合就越大，不利于修改维护。</p><p>类的职责主要包含两个方面：数据职责和行为职责，数据职责通过属性来体现，行为职责通过方法来体现。</p><p>单一职责原则主要的目的就是实现高内聚，低耦合。</p></li><li><p>OCP(The Open Closed Principle)：开放封闭原则<br>一个软件系统应该对扩展是开放的，对修改是关闭的。</p><p>其中抽象化是开闭原则的关键。</p></li><li><p>LSP(The Liskov Substitution Princiiple)：里式替换原则<br>所有引用父类的地方，必须能够透明的使用子类的对象。<br>即在软件系统中如果可以使用父类的对象，那么就一定可以使用其子类对象</p><p>由于可以使用父类对象的地方都可以使用子类对象，所以在程序中应该劲量使用父类类型来对对象进行定义，而在运行时在确定其子类的类型，用子类对象来代替父类对象。</p></li><li><p>ISP(The Interface Segregation Principle)：接口分离原则<br>如果接口范围太大，功能太多，应该将其细化为更小的接口，对于客户而言只需要知道他所需要的接口和方法，不知道的就不用分给他。</p><p>细化接口功能，为不同的客户提供不同的接口</p></li><li><p>DIP(The Dependency Inversion Priinciple)：依赖倒转原则<br>高层模块不应该依赖低层模块，它们都应该依赖抽象。抽象不应该依赖于细节，细节应该依赖于抽象。</p><p>即应该面向接口编程，不要针对实现编程。<br>它的实现方式之一是在代码中使用抽象类，而具体的实现类放在配置文件中。</p><p>依赖注入：接口注入，构造注入，Setter方法注入</p></li></ul><p>3.<strong>准确阐述简单设计四原则以及其优先级的含义</strong><br>a.通过测试<br>所做的测试要满足业务的需求，可以通过客户的验收。</p><p>b.消除重复<br>代码开发中可能因为设计的不够合理，产生很多重复，要消除重复，使得代码更简介，更以维护。消除重复达到高内聚，低耦合。<br>c.接示意图<br>增强代码的可理解性：命名规范，方法体的大小<br>减弱代码的一些干扰因素：减少多余的注释，代码结构更加清晰。</p><p>d.最少元素<br>在不必要的时候，尽可能减少代码元素来降低代码复杂度，保持简单。</p><p>优先级由高到低，通过测试–&gt;消除重复、接示意图–&gt;最少元素<br>4.<strong>准确阐述TDD操作流程和三顶帽子</strong><br>操作流程：测试-&gt;实现-&gt;重构-&gt;测试<br>先写测试，在基于测试的基础上进行实现，然后重构，继续测试，继续实现，直到完成，就是一个循环。</p><p>测试写法：given-&gt;when-&gt;then</p><p>5.<strong>掌握两种Pair的方式和小伙伴协作编码</strong><br>1.驾驶员？<br>一个观察，一个写<br>2.乒乓<br>一起写，交流</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-操作命令&quot;&gt;&lt;a href=&quot;#1-操作命令&quot; class=&quot;headerlink&quot; title=&quot;1.操作命令&quot;&gt;&lt;/a&gt;1.操作命令&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;a.复制文件&lt;/strong&gt;&lt;br&gt;cp &lt;em&gt;.txt filename&lt;br&gt;b.复
+      
+    
+    </summary>
+    
+    
+      <category term="编程开发" scheme="https://xin-zhai.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="git" scheme="https://xin-zhai.github.io/tags/git/"/>
+    
+      <category term="SOLID" scheme="https://xin-zhai.github.io/tags/SOLID/"/>
+    
+      <category term="面向对象" scheme="https://xin-zhai.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="简单四原则" scheme="https://xin-zhai.github.io/tags/%E7%AE%80%E5%8D%95%E5%9B%9B%E5%8E%9F%E5%88%99/"/>
+    
+  </entry>
   
   <entry>
     <title>一周Tips for 01</title>
