@@ -6,7 +6,7 @@
   <link href="/xin-zhai.github.io/atom.xml" rel="self"/>
   
   <link href="https://xin-zhai.github.io/"/>
-  <updated>2020-01-06T15:25:02.614Z</updated>
+  <updated>2020-01-13T06:38:08.573Z</updated>
   <id>https://xin-zhai.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git常用命令</title>
+    <link href="https://xin-zhai.github.io/2020/01/13/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://xin-zhai.github.io/2020/01/13/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-01-13T06:35:18.000Z</published>
+    <updated>2020-01-13T06:38:08.573Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、git基础操作"><a href="#一、git基础操作" class="headerlink" title="一、git基础操作"></a>一、git基础操作</h3><p>1.创建git仓库的方式<br>（1）在一个你想要创建git仓库的地方，这里指的是文件路径，使用如下命令</p><pre><code>git init</code></pre><p> 执行该命令后，就会在相应文件夹下生成.git文件，该文件记录你每次的改变，即版本控制。可以使用下面的命令在文件夹中查看.git文件。</p><a id="more"></a> <pre><code>ls -ah</code></pre><p>（2）使用下面的命令直接在相应的文件夹下创建你所命名的git 仓库</p><pre><code>git init repository_name</code></pre><p>2.git 添加文件方式<br>git使用如下命令添加文件到仓库中，需要在将要添加的文件放到仓库中，然后使用命令</p><pre><code>git add filename //添加单个文件，可多次git add .        //添加所有改动</code></pre><p>git 可以多次add，然后再一起commit。</p><p>3.git 提交文件的方式<br>在add后，可以直接使用如下命令进行提交，其中message，是本次提交所改动的信息。</p><pre><code>git commit -m &quot;message&quot;</code></pre><p>4.git 查看当前仓库的状态，比如文件是否改动等</p><pre><code>git status</code></pre><p>该命令会列出未提交的文件的改动信息，以及当前的仓库状态，在哪个分支上等。</p><p>5.git 查看文件的具体改动细节</p><pre><code>git diff filename</code></pre><p>该命令会列出filename文件的所有改动信息</p><p>6.git 查看提交的日志记录</p><pre><code>git loggit log --pretty=oneline //简短的查看日志记录</code></pre><p>7.git 版本回退</p><pre><code>HEAD^：回退到上一个版本HEAD^^:回退到上上个版本HEAD-100：回退到前100个版本git reset --hard HEAD^ 回退到上一个版本修改前的模样git reset --hard 版本号：回到版本号所在的版本，具体如何查看版本号后面说没有退出命令行之前，可以git log查看当前所有提交的版本号进行回退，若是关闭了命令，找不到回退前的版本号的话，可以使用git reflog命令</code></pre><p>8.git 查看工作区与版本库里内容的不同</p><pre><code>git diff HEAD -- filename  //查看filename文件的内容不同</code></pre><p>9.当你修改了工作区的内容，而未放到暂存区或者add到了暂存区，然后进行修改了，你可以使用以下命令，回到你修改前的状态。</p><pre><code>git checkout -- filename</code></pre><p>他是有两种情况，对于第一种情况，是回到修改前的版本库一样的状态，对于第二种状态，是回到添加到暂存区后的状态</p><p>10.对于你提交到暂存区后，你想回退到你修改要提交前的状态，你可以使用以下的命令</p><pre><code>git reset HEAD filename</code></pre><p>git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。</p><p>在回退到该状态后，你可以使用git checkout – filename 命令回到修改前的状态。</p><p>11.git 可以删除文件，当你在仓库中rm filename ，之后你通过git status查看状态后，你会发现它提示有文件删除了，如果是误删，你可以从远程仓库恢复到最近提交的版本，命令是 git checkout – filename , 若是不是误删，也想删除版本库中的文件，git rm filename</p><p>12.git 将本地仓库关联远程仓库，之后就可以将本地仓库的内容，推送到远程仓库，进入到本地仓库，然后输入下命令。</p><pre><code>git remote add origin git@github.com:yougithubname/remote_repo_name.git</code></pre><p>13.git 将本地仓库的内容推送到远程仓库</p><pre><code>第一次提交,提交内容，关联仓库git push -u origin master第二次以后的提交，直接提交git push origin master</code></pre><p>14.git 查看远程分支的状态，进入到本地仓库，输入命令</p><pre><code>git remote</code></pre><p>15.git 克隆远程仓库到本地</p><pre><code>git clone SSH path/filename</code></pre><h3 id="二、git-分支操作"><a href="#二、git-分支操作" class="headerlink" title="二、git 分支操作"></a>二、git 分支操作</h3><p>1.git 查看分支</p><pre><code>git branch</code></pre><p>2.git 创建分支</p><pre><code>git branch branch_name</code></pre><p>3.切换分支</p><pre><code>git checkout branch_namegit switch branch_name</code></pre><p>4.创建并切换分支</p><pre><code>git checkout -b branch_namegit switch -c branch_name</code></pre><p>5.合并分支到当前分支</p><pre><code>git merge branch_name</code></pre><p>6.删除分支</p><pre><code>git branch -d branch_name</code></pre><p>7.分支合并的冲突<br>对于冲突，需要手动去修改冲突的内容，然后再提交</p><p>8.查看分支合并图</p><pre><code>git log --graphgit log --graph --pretty=oneline --abbrev-commit</code></pre><p>9.不使用Fast-Forward方式合并，可以看到合并提交的历史</p><pre><code>git merge --no-ff -m &quot;message inception&quot; branch_name</code></pre><p>其中的message为分支合并的说明，你也可以看到此次历史。</p><p>10.bug分支–如何修改bug<br>发现bug后，可以创建一个新的bug分支来修复bug，然后再与master分支合并，如果此时开发的分支正在开发，还有一些内容没有提交，你可以使用git stash命令暂存工作区，然后再去创建bug分支，然后进行修改</p><pre><code>1.确定在哪个分支修改bug,然后创建分支进行bug修改，修改后提交，假如used分支正在工作，首先在该分支上git stash修改master上的分支的buggit checkout mastergit checkout -b error/git switch -c error修复buggit checkout mastergit merge errorgit branch -d errorgit checkout usedgit stash pop/git stash apply and git stash drop之后继续进行编辑git stash list 可以查看stash列表</code></pre><p>此时你会想used分支肯定也有bug，那怎么修复呢？可以直接将master上的修改传到used分支。在used分支上，执行下面的命令</p><pre><code>git cherry-pick error_submit_id</code></pre><p>11.强制删除未合并的分支</p><pre><code>git branch -D branch_name</code></pre><p>12.查看远程库的信息</p><pre><code>git remote -v将更新推送到远程库的某个分支git push origin branch_name如果远程库比你本地要新，则会更新失败，此时需要将最新版本抓取下来git pull解决冲突后，再次推送</code></pre><p>13.在本地创建与远程分支对应的分支，本地分支最好与远程分支的名称一致</p><pre><code>git checkout -b branch_name origin/branch_name</code></pre><p>14.建立本地分支和远程分支的关联</p><pre><code>git branch --set-upstream branch_name origin/branch_name</code></pre><p><strong>参考链接：</strong><br><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、git基础操作&quot;&gt;&lt;a href=&quot;#一、git基础操作&quot; class=&quot;headerlink&quot; title=&quot;一、git基础操作&quot;&gt;&lt;/a&gt;一、git基础操作&lt;/h3&gt;&lt;p&gt;1.创建git仓库的方式&lt;br&gt;（1）在一个你想要创建git仓库的地方，这里指的是文件路径，使用如下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 执行该命令后，就会在相应文件夹下生成.git文件，该文件记录你每次的改变，即版本控制。可以使用下面的命令在文件夹中查看.git文件。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="系统开发" scheme="https://xin-zhai.github.io/categories/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="git" scheme="https://xin-zhai.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>一周Tips for 02</title>
@@ -94,9 +118,9 @@
       <category term="系统开发" scheme="https://xin-zhai.github.io/categories/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="mac" scheme="https://xin-zhai.github.io/tags/mac/"/>
-    
       <category term="git" scheme="https://xin-zhai.github.io/tags/git/"/>
+    
+      <category term="mac" scheme="https://xin-zhai.github.io/tags/mac/"/>
     
   </entry>
   
