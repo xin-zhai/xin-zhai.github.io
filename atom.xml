@@ -6,7 +6,7 @@
   <link href="/xin-zhai.github.io/atom.xml" rel="self"/>
   
   <link href="https://xin-zhai.github.io/"/>
-  <updated>2020-01-13T06:38:08.573Z</updated>
+  <updated>2020-01-20T10:37:06.284Z</updated>
   <id>https://xin-zhai.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一周Tips 03</title>
+    <link href="https://xin-zhai.github.io/2020/01/20/%E4%B8%80%E5%91%A8Tips-03/"/>
+    <id>https://xin-zhai.github.io/2020/01/20/%E4%B8%80%E5%91%A8Tips-03/</id>
+    <published>2020-01-20T10:34:18.000Z</published>
+    <updated>2020-01-20T10:37:06.284Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>1.mac下查看jdk安装路径</strong></p><pre><code>/usr/libexec/java_home -V</code></pre><a id="more"></a>    <p><strong>2.docker</strong><br>查看已有的docker容器的状态</p><pre><code>docker ps -a</code></pre><p>启动和关闭docker</p><pre><code>docker start container_namedocker stop container_name</code></pre><p><strong>3.linux命令复习</strong></p><pre><code>创建文件：mkdir filename复制文件：cp filename1 filename2删除文件：rm -rf filename查看进程：ps -ef| grep process_name杀掉进程：kill -9 process_name创建文件：touch file.*查看文件：cat filename修改文件：vim filename            修改：i 插入，a 添加        修改完成退出：wq!        修改不保存：q!</code></pre><p><strong>4.IDEA快捷键mac版</strong></p><pre><code>全局搜索：command+Shift+f局部搜索：command+f基本代码补全：control+space智能补全：control+shift+space自动结束代码，行末自动添加分号：command+shift+enter注释/取消注释：command+/查询任何东西：double Shift文件内替换：command+r全局替换：command+r+shift</code></pre><p><strong>5.Debug的正确姿势</strong><br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/day006_1.png?raw=true" alt=""></p><ol><li>Step Over：进入下一步，如果是方法，就直接跳过</li><li>Step Into：进入下一步，如果是方法，就进入方法内部，但是不会进入JDK封装的方法</li><li>Force Step Into：强制进入下一步，不管是什么方法，即使是JDK封装的方法，也会进入</li><li>Step Out：跳转到下一个断点，没有的话直接运行到最后。</li><li>Run to Cursor：运行到光标处</li><li>Drop Frame：返回到进入方法前(4和5中间的那个)</li></ol><p><strong>6.Android Studio小技巧</strong></p><ol><li>全局搜索<br>control+command+f</li><li>局部搜索<br>command+f</li><li>如何知道手机页面具体的layout<br>运行在当前界面，进入Android Studio，如下图操作<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/day006_2.png?raw=true" alt=""><br>然后选择相应的xml即可。</li></ol><p>参考：<br><a href="https://blog.csdn.net/fly910905/article/details/80013391" target="_blank" rel="noopener">https://blog.csdn.net/fly910905/article/details/80013391</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;1.mac下查看jdk安装路径&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/usr/libexec/java_home -V&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="编程开发" scheme="https://xin-zhai.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="IDEA" scheme="https://xin-zhai.github.io/tags/IDEA/"/>
+    
+      <category term="docker" scheme="https://xin-zhai.github.io/tags/docker/"/>
+    
+      <category term="Debug" scheme="https://xin-zhai.github.io/tags/Debug/"/>
+    
+      <category term="Linux" scheme="https://xin-zhai.github.io/tags/Linux/"/>
+    
+      <category term="jdk" scheme="https://xin-zhai.github.io/tags/jdk/"/>
+    
+  </entry>
   
   <entry>
     <title>Git常用命令</title>
