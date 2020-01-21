@@ -6,7 +6,7 @@
   <link href="/xin-zhai.github.io/atom.xml" rel="self"/>
   
   <link href="https://xin-zhai.github.io/"/>
-  <updated>2020-01-20T10:37:06.284Z</updated>
+  <updated>2020-01-21T06:46:57.196Z</updated>
   <id>https://xin-zhai.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker 小记</title>
+    <link href="https://xin-zhai.github.io/2020/01/21/Docker-%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://xin-zhai.github.io/2020/01/21/Docker-%E5%B0%8F%E8%AE%B0/</id>
+    <published>2020-01-21T06:44:27.000Z</published>
+    <updated>2020-01-21T06:46:57.196Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、Docker架构"><a href="#一、Docker架构" class="headerlink" title="一、Docker架构"></a>一、Docker架构</h3><p>Docker有三个主要的部分，镜像、容器、仓库。镜像就是远程的一个实体程序的模板，容器就是你从远程拉下来的那个实体程序的复制，仓库就是用来保存镜像的地方。</p><a id="more"></a><h3 id="二、Docker常用命令"><a href="#二、Docker常用命令" class="headerlink" title="二、Docker常用命令"></a>二、Docker常用命令</h3><p>1.docker 启动容器</p><pre><code>1.docker run container_name  &lt;orders&gt; //orders是对当前容器所做的指令,对于新容器要用run2.docker start container_name</code></pre><p>2.如果忘记了容器名，可以使用如下命令来查看当前本机上所安装的容器</p><pre><code>docker ps -adocker ps -l  //查询最后一次创建的容器docker ps -q  //查询当前运行容器的IDdocker ps -s  //查看当前运行容器的大小命令后的一些字段的含义：CONTAINER ID：容器IDIMAGE:使用的镜像COMMAND:启动容器时运行的命令CREATED:容器创建的时间STATUS:容器的状态  -created：已创建  -restarting:重启中  -running：运行中  -removing：迁移中  -paused:暂停  -exited:停止  -dead:死亡 PORTS:端容器的端口信息和使用的连接类型(tcp/udp) NAMES:自动分配的容器名称</code></pre><p>3.若是想直接进入容器进行操作，使用如下命令</p><pre><code>docker run -i -t container_namei:交互式t:终端</code></pre><p>4.停止和退出当前进入的容器</p><pre><code>docker stop container_name //停止exit  //退出CTRL+D/command+D //退出</code></pre><p>5.如果你想后台运行容器，则需要使用如下命令</p><pre><code>docker run -d container_name &lt;orders&gt;如果想对后台运行的容器进行操作docker attach container_name如果想退出容器而不终止它的后台运行docker exec container_name</code></pre><p>6.可以查看特定容器的日志记录</p><pre><code>docker log container_name</code></pre><p>7.搜索镜像以及拉取镜像</p><pre><code>docker search namedocker pull name</code></pre><p>8.如果忘记了docker命令，则使用如下命令来查看docker的命令</p><pre><code>docker</code></pre><p>9.如果不清楚某个命令的具体使用方法，可以使用如下命令来查看</p><pre><code>docker command --help</code></pre><p>10.重启容器</p><pre><code>docker restart container_name</code></pre><p>11.导入和导出容器</p><pre><code>docker import name/url  somewheredocker export name/url  somewhere</code></pre><p>12.删除某个容器</p><pre><code>docker rm -f  container_name</code></pre><p>13.在运行web应用时，我们可以使用如下命令</p><pre><code>docker pull namedocker run -d -P 8888:5000 name将容器的5000端口映射到主机的8888端口，这时你就可以在本机输入ip+端口号：8888进行访问。-P:将容器内部使用的网络端口映射到我们使用的主机上可以通过docker ps -a 来查看运行的容器和端口，然后就可以利用ip和端口号进行访问</code></pre><p>14.查看容器指定端口映射到具体的宿主机端口</p><pre><code>docker port name</code></pre><p>15.查看Web应用的日志</p><pre><code>docker log -f name-f: 让 docker logs 像使用 tail -f 一样来输出容器内部的标准输出。</code></pre><p>16.查看进程以及检查容器的进程</p><pre><code>docker top name //查看docker inspect name //检查，会返回一个json格式的状态文件</code></pre><p>17.列出本地镜像</p><pre><code>docker images -REPOSITORY:表示镜像的仓库 -TAG:镜像标签 -IMAGE ID:镜像ID -CREATED:创建镜像的时间 -SIZE:镜像的大小</code></pre><p>18.删除镜像</p><pre><code>docker rmi name</code></pre><p>官方文档：<a href="https://docs.docker.com/" target="_blank" rel="noopener">https://docs.docker.com/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、Docker架构&quot;&gt;&lt;a href=&quot;#一、Docker架构&quot; class=&quot;headerlink&quot; title=&quot;一、Docker架构&quot;&gt;&lt;/a&gt;一、Docker架构&lt;/h3&gt;&lt;p&gt;Docker有三个主要的部分，镜像、容器、仓库。镜像就是远程的一个实体程序的模板，容器就是你从远程拉下来的那个实体程序的复制，仓库就是用来保存镜像的地方。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="系统开发" scheme="https://xin-zhai.github.io/categories/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="docker" scheme="https://xin-zhai.github.io/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>一周Tips 03</title>
