@@ -6,7 +6,7 @@
   <link href="/xin-zhai.github.io/atom.xml" rel="self"/>
   
   <link href="https://xin-zhai.github.io/"/>
-  <updated>2020-01-21T06:46:57.196Z</updated>
+  <updated>2020-01-22T10:23:56.658Z</updated>
   <id>https://xin-zhai.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Charles 小记</title>
+    <link href="https://xin-zhai.github.io/2020/01/22/Charles-%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://xin-zhai.github.io/2020/01/22/Charles-%E5%B0%8F%E8%AE%B0/</id>
+    <published>2020-01-22T10:21:42.000Z</published>
+    <updated>2020-01-22T10:23:56.658Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>Charles通过将自己设置成系统的网络访问代理服务器，使得所有网络请求都可以通过它来完成，从而实现网络封包的截取和分析。<br>你只需要运行软件，并使得相应的应用在相同的网络下，在改系统下经过的所有请求都会被截取下拉，你只需要focus你想关注的请求就可以了。</p><a id="more"></a><p>Charles在开启的时候回默认监听该系统网络下的所有请求，所以，如果你需要监听安卓项目所发的请求，只需要去配置一下代理，将IP换成你当前网络的IP，然后focus你所关注的请求。</p><p>之后你就可以看到你每个请求的请求内容，以及返回的状态，同样的，你也可以更改请求的内容，进行执行结果的观察。</p><h3 id="二、Charles功能"><a href="#二、Charles功能" class="headerlink" title="二、Charles功能"></a>二、Charles功能</h3><ul><li>1.截取Http和Https网络封包</li><li>2.支持重发网络请求，方便后端测试</li><li>3.支持修改网络请求参数</li><li>4.支持网络请求的截获并动态修改</li><li>5.支持模拟慢速网络</li></ul><h3 id="三、Charles配置"><a href="#三、Charles配置" class="headerlink" title="三、Charles配置"></a>三、Charles配置</h3><p><strong>1.PC端http请求抓包配置</strong><br>a.启动Charles–&gt;Proxy–&gt;勾选macOS Proxy/windows Proxy<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles03.png?raw=true" alt=""><br>b.配置Proxy–&gt;Proxy Settings，Port:8888，勾选Enable transparent Http proxying<br> <img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles04.png?raw=true" alt=""></p><p><strong>2.Pc端https请求抓包配置</strong><br>a.下载证书，Help–&gt;SSL Proxying–&gt;Install  Charles Root Certificate<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles05.png?raw=true" alt=""><br>会弹出一个介绍窗口，你需要复制chls.pro/ssl去浏览器去搜，然后会自动下载，下载好后双击，就会进入钥匙串访问，此时你会发现证书上面有个红×，此时你只需要双击证书，在里面选择全部信任即可<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles06.png?raw=true" alt=""><br>b.配置Proxy–&gt;SSL Proxying Settings…<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles07.png?raw=true" alt=""><br>勾选Enable SSL Proxying，然后在Include中Add，添加Ip: *，端口号：443<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles08.png?raw=true" alt=""><br>配置完成。</p><p><strong>3.移动端http请求抓包配置</strong><br>a.首先要知道你电脑当前的ip，即网络地址，可以使用ipconfig查看。<br>b.去移动端的settings配置Proxy，在Host name中输入ip，端口号8888，然后APPLY<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles09.png?raw=true" alt=""><br>注意pc和移动端在同一个网络下<br>然后就可以抓取移动端的请求了。</p><p><strong>4.移动端https请求抓包配置</strong><br>a.Help–&gt;SSL Proxying–&gt;Install Charles Root Certificate on a Mobile Device or Remote Browser<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles10.png?raw=true" alt=""><br>同上，会弹出一个窗口，你需要到手机的浏览器中搜索，chls.pro/ssl，会跳转到证书安装页面，安装证书，也需要输入密码。安装完成后，重新请求，就可以啦。</p><p>注意：不抓包的时候务必要关闭手机设置的HTTP代理，否则断开与电脑的连接后手机会上不去网。</p><h3 id="四、Charles具体使用"><a href="#四、Charles具体使用" class="headerlink" title="四、Charles具体使用"></a>四、Charles具体使用</h3><p>1.开启Charles(监听当前网络状态下的请求)<br>2.focus要观察的请求<br>3.按照如下图的功能，执行想要的操作<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles01.png?raw=true" alt=""><br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/Charles02.png?raw=true" alt=""><br>Structure： 此视图将网络请求按访问的域名分类。<br>Sequence： 此视图将网络请求按访问的时间排序。</p><p>参考：<br><a href="https://juejin.im/post/5b8350b96fb9a019d9246c4c" target="_blank" rel="noopener">https://juejin.im/post/5b8350b96fb9a019d9246c4c</a><br><a href="https://segmentfault.com/a/1190000016473282" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016473282</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h3&gt;&lt;p&gt;Charles通过将自己设置成系统的网络访问代理服务器，使得所有网络请求都可以通过它来完成，从而实现网络封包的截取和分析。&lt;br&gt;你只需要运行软件，并使得相应的应用在相同的网络下，在改系统下经过的所有请求都会被截取下拉，你只需要focus你想关注的请求就可以了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="系统开发" scheme="https://xin-zhai.github.io/categories/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="charles" scheme="https://xin-zhai.github.io/tags/charles/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker 小记</title>
