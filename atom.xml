@@ -6,7 +6,7 @@
   <link href="/xin-zhai.github.io/atom.xml" rel="self"/>
   
   <link href="https://xin-zhai.github.io/"/>
-  <updated>2020-01-22T10:23:56.658Z</updated>
+  <updated>2020-01-26T09:20:01.352Z</updated>
   <id>https://xin-zhai.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DBeaver 小记</title>
+    <link href="https://xin-zhai.github.io/2020/01/26/DBeaver-%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://xin-zhai.github.io/2020/01/26/DBeaver-%E5%B0%8F%E8%AE%B0/</id>
+    <published>2020-01-26T09:13:13.000Z</published>
+    <updated>2020-01-26T09:20:01.352Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、DBeaver-使用介绍"><a href="#一、DBeaver-使用介绍" class="headerlink" title="一、DBeaver 使用介绍"></a>一、DBeaver 使用介绍</h3><p>DBeaver是一个可视化的SQL查询工具，可以连接不同的数据源，进行数据库数据进行操作。比如：MYSQL、Oracle、PostgreSQL等等。</p><a id="more"></a><h3 id="二、界面介绍"><a href="#二、界面介绍" class="headerlink" title="二、界面介绍"></a>二、界面介绍</h3><p><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver01.png?raw=true" alt="enter image description here"><br>1.<img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver02.png?raw=true" alt="enter image description here"> ：新建和数据源的连接<br>点击后，里面会有各种数据源选项，然后选择后输入数据库名、用户和密码进行连接<br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver03.png?raw=true" alt="enter image description here"><br><img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver04.png?raw=true" alt="enter image description here"></p><p>2.<img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver05.png?raw=true" alt="enter image description here">：从左到右，连接、断开/重新连接、断开连接</p><p>3.<img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver06.png?raw=true" alt="enter image description here">：从左到右，SQL编辑器、近期的SQL编辑器、新建SQL编辑器</p><p>4.<img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver07.png?raw=true" alt="enter image description here">：从左到右、提交、回滚、切换到手动提交</p><p>5.<img src="https://github.com/xin-zhai/xin-zhai.github.io/blob/master/CodeImages/DBeaver08.png?raw=true" alt="enter image description here">：输入表名来快速找到表</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、DBeaver-使用介绍&quot;&gt;&lt;a href=&quot;#一、DBeaver-使用介绍&quot; class=&quot;headerlink&quot; title=&quot;一、DBeaver 使用介绍&quot;&gt;&lt;/a&gt;一、DBeaver 使用介绍&lt;/h3&gt;&lt;p&gt;DBeaver是一个可视化的SQL查询工具，可以连接不同的数据源，进行数据库数据进行操作。比如：MYSQL、Oracle、PostgreSQL等等。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="系统开发" scheme="https://xin-zhai.github.io/categories/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="DBeaver" scheme="https://xin-zhai.github.io/tags/DBeaver/"/>
+    
+  </entry>
   
   <entry>
     <title>Charles 小记</title>
